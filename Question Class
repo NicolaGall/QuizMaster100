@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Question {
+    String text;
+    String options;
+    String solution;
+
+    Question(String text, String options, String solution) {
+        this.text = text;
+        this.options = options;
+        this.solution = solution;
+    }
+
+    boolean ask(Scanner scanner) {
+        System.out.println(text);
+        System.out.println(options);
+
+        String input = scanner.nextLine();
+        boolean firstTry = true;
+
+        while (!input.trim().equalsIgnoreCase(solution)) {
+            System.out.println("Not Correct. Try again!");
+            firstTry = false;
+            input = scanner.nextLine();
+        }
+
+        System.out.println("Correct. Nicely done!");
+        return firstTry;
+    }
+}
