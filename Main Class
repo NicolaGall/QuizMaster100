@@ -1,0 +1,140 @@
+
+import java.util.Scanner;
+
+public class Main {
+    static Scanner scan = new Scanner(System.in);
+    static int score = 0;
+
+    public static void main(String[] args) {
+
+        System.out.println("WELCOME TO THE QUIZ MASTER 100");
+        System.out.println();
+
+        int a = 0;
+
+        while (a != 5) {
+            System.out.println("Please choose a subject:");
+            System.out.println();
+            System.out.println("1: MATH");
+            System.out.println("2: PROGRAMMING");
+            System.out.println("3: SPORTS");
+            System.out.println("4: SURPRISE");
+            System.out.println("5: QUIT");
+
+            a = scan.nextInt();
+
+            while (a < 1 || a > 5) {
+                System.out.println("Please choose only between 1 and 5:");
+                a = scan.nextInt();
+            }
+            scan.nextLine();
+
+            if (a == 1) {
+                playMath();
+            } else if (a == 2) {
+                playProgramming();
+            } else if (a == 3) {
+                playSports();
+            } else if (a == 4) {
+                playSurprise();
+            } else if (a == 5) {
+                System.out.println("Thanks for playing QUIZ MASTER 100!");
+            }
+        }
+
+        System.out.println("Your score is: " + score);
+    }
+
+    static void playMath() {
+        System.out.println("Your subject will be the fascinating world of MATH");
+        System.out.println();
+        System.out.println("Please answer the following question:");
+        System.out.println();
+        System.out.println("Which of the following numbers is odd:");
+        System.out.println("3, 6, 2, 10");
+        System.out.println();
+        int answer = scan.nextInt();
+        boolean firstTry = true;
+        while (answer != 3) {
+            System.out.println("Not Correct. Try again!");
+            firstTry = false;
+            answer = scan.nextInt();
+        }
+        scan.nextLine();
+        System.out.println("Correct. Nicely done!");
+        System.out.println();
+
+        if (firstTry) {
+            score++;
+        }
+    }
+
+    static void playProgramming() {
+        System.out.println("Your subject will be the never ending void of zeros and ones; PROGRAMMING");
+        System.out.println();
+        System.out.println("Please answer the following question:");
+        System.out.println();
+        System.out.println("Which of the following datatypes is non-primitive:");
+        System.out.println("int, byte, String, short");
+        System.out.println();
+        String answer = scan.nextLine();
+        boolean firstTry = true;
+        while (!answer.trim().equalsIgnoreCase("String")) {
+            System.out.println("Not Correct. Try again!");
+            firstTry = false;
+            answer = scan.nextLine();
+        }
+        System.out.println("Correct. Nicely done!");
+        System.out.println();
+
+        if (firstTry) {
+            score++;
+        }
+    }
+
+    static void playSports() {
+        System.out.println("Your subject will be the heroic universe of SPORTS");
+        System.out.println();
+        System.out.println("Please answer the following question:");
+        System.out.println();
+        System.out.println("Which of the following athletes is still active:");
+        System.out.println("Dirk Nowitzki, Mike Tyson, Cristiano Ronaldo, Marco Streller");
+        System.out.println();
+        String answer = scan.nextLine();
+        boolean firstTry = true;
+        while (!answer.trim().equalsIgnoreCase("Cristiano Ronaldo")) {
+            System.out.println("Not Correct. Try again!");
+            firstTry = false;
+            answer = scan.nextLine();
+        }
+        System.out.println("Correct. Nicely done!");
+        System.out.println();
+
+        if (firstTry) {
+            score++;
+        }
+    }
+
+    static void playSurprise() {
+        System.out.println("Your subject will be a SURPRISE");
+        System.out.println();
+        System.out.println("Please answer the following question:");
+        System.out.println();
+        System.out.println("Which of the following presidents was not shot:");
+        System.out.println("Donald Trump, John F. Kennedy, Abraham Lincoln, Barack Obama");
+        System.out.println();
+        String answer = scan.nextLine();
+        boolean firstTry = true;
+        while (!answer.trim().equalsIgnoreCase("Barack Obama")) {
+            System.out.println("Not Correct. Try again!");
+            firstTry = false;
+            answer = scan.nextLine();
+        }
+        System.out.println("Correct. Nicely done!");
+        System.out.println();
+
+        if (firstTry) {
+            score++;
+        }
+    }
+}
