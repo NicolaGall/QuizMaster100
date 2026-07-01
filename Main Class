@@ -50,21 +50,8 @@ public class Main {
         System.out.println();
         System.out.println("Please answer the following question:");
         System.out.println();
-        System.out.println("Which of the following numbers is odd:");
-        System.out.println("3, 6, 2, 10");
-        System.out.println();
-        int answer = scan.nextInt();
-        boolean firstTry = true;
-        while (answer != 3) {
-            System.out.println("Not Correct. Try again!");
-            firstTry = false;
-            answer = scan.nextInt();
-        }
-        scan.nextLine();
-        System.out.println("Correct. Nicely done!");
-        System.out.println();
-
-        if (firstTry) {
+        Question q = new Question("Which of the following numbers is odd?", "2, 3, 6, 8", "3");
+        if (q.ask(scan)) {
             score++;
         }
     }
@@ -74,20 +61,8 @@ public class Main {
         System.out.println();
         System.out.println("Please answer the following question:");
         System.out.println();
-        System.out.println("Which of the following datatypes is non-primitive:");
-        System.out.println("int, byte, String, short");
-        System.out.println();
-        String answer = scan.nextLine();
-        boolean firstTry = true;
-        while (!answer.trim().equalsIgnoreCase("String")) {
-            System.out.println("Not Correct. Try again!");
-            firstTry = false;
-            answer = scan.nextLine();
-        }
-        System.out.println("Correct. Nicely done!");
-        System.out.println();
-
-        if (firstTry) {
+        Question q = new Question("Which of the following datatypes is non-primitive?", "int, byte, String, short", "String");
+        if (q.ask(scan)) {
             score++;
         }
     }
@@ -97,20 +72,8 @@ public class Main {
         System.out.println();
         System.out.println("Please answer the following question:");
         System.out.println();
-        System.out.println("Which of the following athletes is still active:");
-        System.out.println("Dirk Nowitzki, Mike Tyson, Cristiano Ronaldo, Marco Streller");
-        System.out.println();
-        String answer = scan.nextLine();
-        boolean firstTry = true;
-        while (!answer.trim().equalsIgnoreCase("Cristiano Ronaldo")) {
-            System.out.println("Not Correct. Try again!");
-            firstTry = false;
-            answer = scan.nextLine();
-        }
-        System.out.println("Correct. Nicely done!");
-        System.out.println();
-
-        if (firstTry) {
+        Question q = new Question("Which of the following athletes is still active?", "Dirk Nowitzki, Mike Tyson, Cristiano Ronaldo, Marco Streller", "Cristiano Ronaldo");
+        if (q.ask(scan)) {
             score++;
         }
     }
@@ -120,20 +83,8 @@ public class Main {
         System.out.println();
         System.out.println("Please answer the following question:");
         System.out.println();
-        System.out.println("Which of the following presidents was not shot:");
-        System.out.println("Donald Trump, John F. Kennedy, Abraham Lincoln, Barack Obama");
-        System.out.println();
-        String answer = scan.nextLine();
-        boolean firstTry = true;
-        while (!answer.trim().equalsIgnoreCase("Barack Obama")) {
-            System.out.println("Not Correct. Try again!");
-            firstTry = false;
-            answer = scan.nextLine();
-        }
-        System.out.println("Correct. Nicely done!");
-        System.out.println();
-
-        if (firstTry) {
+        Question q = new Question("Which of the following presidents was not shot?", "Donald Trump, John F. Kennedy, Abraham Lincoln, Barack Obama", "Barack Obama");
+        if (q.ask(scan)) {
             score++;
         }
     }
